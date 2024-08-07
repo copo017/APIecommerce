@@ -92,6 +92,8 @@ WSGI_APPLICATION = "ecommerce.wsgi.application"
 #     }
 # }
 
+
+#https://pypi.org/project/dj-database-url/
 DATABASES = {
     'default': dj_database_url.parse("postgresql://product_sql_ddrl_user:pEPFmaoHHwTXtRkI5XVFG7cX0mYZpqEe@dpg-cqphtpdsvqrc73frtepg-a.oregon-postgres.render.com/product_sql_ddrl")
 }
@@ -159,6 +161,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
