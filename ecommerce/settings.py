@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-#hb!a@()0f!weiycw1_9j2h4@zl5mk3q20xxm0wi2aarxppkd7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['apiecommerce-h7hg.onrender.com']
 
 import os
 
