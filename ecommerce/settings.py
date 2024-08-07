@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,16 +30,6 @@ SECRET_KEY = "django-insecure-#hb!a@()0f!weiycw1_9j2h4@zl5mk3q20xxm0wi2aarxppkd7
 DEBUG = True
 
 ALLOWED_HOSTS = ['apiecommerce-h7hg.onrender.com','*']
-
-import os
-
-# Directorio para archivos de medios
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-
-
 
 # Application definition
 
@@ -162,6 +155,9 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
