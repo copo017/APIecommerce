@@ -9,11 +9,16 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
+    #category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all())
+    category_name = serializers.SerializerMethodField()
+
 
     class Meta:
         model = Product
-        fields = ['id', 'name', 'description', 'image', 'price','quantity','category']
+        fields = ['id', 'name', 'description', 'image', 'price','quantity','category','category_name']
+
+    def get_category_name(self, obj):
+        return obj.category.name  # Access the related category's name
 
     def validate_quantity(self, value):
         if value > 100:
